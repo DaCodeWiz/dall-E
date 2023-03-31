@@ -5,15 +5,15 @@ export async function POST(request: Request) {
   const prompt = res.prompt;
 
   const response = await fetch(
-    "https://sonnytestapp.azurewebsites.net/api/generateImage",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt }),
-    }
-  );
+		'http://localhost:7071/api/generateImage',
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ prompt }),
+		}
+	);
 
   const textData = await response.text();
 
